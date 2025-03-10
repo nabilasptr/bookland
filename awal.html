@@ -14,16 +14,24 @@
     <header>
       <nav class="navbar">
         <a href="#" class="logo">BookLand</a>
-        <div class="nav-links">
-          <a href="#" class="nav-link">Kategori buku</a>
-          <a href="#" class="nav-link">Rekomendasi</a>
-          <a href="#" class="nav-link">Katalog</a>
+
+        <div class="nav-main">
+          <!-- Kategori Button -->
+          <a href="#" class="nav-link kategori">
+            <i class="fa-solid fa-bars"></i> Kategori
+          </a>
+
+          <!-- Search Bar -->
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+            <button><i class="fa-solid fa-search"></i></button>
+          </div>
         </div>
+
         <div class="nav-icons">
           <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
           <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a>
           <a href="notifications.html"><i class="fa-solid fa-bell"></i></a>
-          <a href="profile.html"><i class="fa-solid fa-circle-user"></i></a>
         </div>
 
         <div class="buttons">
@@ -32,23 +40,24 @@
         </div>
       </nav>
     </header>
+
+    <center>
     <section class="textbook-marketplace">
-      <div class="marketplace-content">
-        <div class="marketplace-text">
-          <h2>Temukan buku yang Anda cari dengan lebih mudah!...</h2>
-          <div class="marketplace-search">
-            <input
-              type="text"
-              placeholder="Search..."
-              class="marketplace-input"
-            />
-            <button class="marketplace-button">Search</button>
-          </div>
+      <div class="hero-section">
+        <div class="hero-text">
+          <p class="subheading">EDITOR CHOICE</p>
+          <h1>
+            <span class="underline">Top 10</span> Books<br />To Make It A Great
+            Year
+          </h1>
+          <button class="shop-btn">Shop Now →</button>
         </div>
-        <div class="marketplace-image">
-          <img src="Book.jpeg" alt="Stack of books" class="books-stack" />
+        <div class="hero-image">
+          <img src="books.jpg" alt="Books" />
         </div>
+        
       </div>
     </section>
+    </center>
   </body>
 </html>

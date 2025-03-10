@@ -6,14 +6,21 @@
   font-family: Arial, sans-serif;
 }
 
+/* Background Website */
+body {
+  background: url("../images/library.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 /* Logo */
@@ -24,50 +31,67 @@
   color: #333;
 }
 
-/* Link Navigasi */
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #666;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+/* Navbar Main (Kategori + Search) */
+.nav-main {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 
-.nav-link i {
-  font-size: 18px;
+/* Kategori Button (Sesuai dengan Login) */
+.kategori {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #666;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #666;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-/* Efek Hover */
-.nav-link:hover {
-  background: #444;
+.kategori:hover {
+  background: #666;
   color: white;
 }
 
-/* Container Ikon */
-.nav-icons {
+/* Search Bar */
+.search-bar {
   display: flex;
-  justify-content: center; /* Posisikan ikon secara rata */
   align-items: center;
-  gap: 40px; /* Beri jarak antar ikon */
+  gap: 5px;
+  background: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
-/* Gaya Ikon */
-.nav-icons a {
-  text-decoration: none;
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100px;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+}
+
+/* Ikon Navigasi */
+.nav-icons {
+  display: flex;
+  gap: 40px;
 }
 
 .nav-icons i {
   font-size: 22px;
   color: #666;
-  cursor: pointer;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -94,7 +118,6 @@
 /* Tombol Login */
 .btn-login {
   color: #666;
-  background: transparent;
 }
 
 .btn-login:hover {
@@ -105,7 +128,6 @@
 /* Tombol Signup */
 .btn-signup {
   color: #666;
-  background: transparent;
 }
 
 .btn-signup:hover {
@@ -120,68 +142,91 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row; /* Supaya teks di kiri, gambar di kanan */
 }
 
-.marketplace-content {
+/* Textbook Marketplace Section */
+.textbook-marketplace {
+  background-color: #f9f9f9;
+  padding: 60px 5%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 50px;
+  align-items: center; /* Pusatkan vertikal */
+  justify-content: space-between; /* Teks kiri, gambar kanan */
+  height: 80vh; /* Buat kontennya berada di tengah halaman */
 }
 
+/* Posisi teks di pojok kiri */
 .marketplace-text {
   flex: 1;
+  text-align: left;
+  align-self: flex-start; /* Pastikan teks ada di pojok kiri */
 }
 
-.marketplace-text h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.marketplace-text p {
-  color: #666;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
+/* Hapus pencarian di tengah */
 .marketplace-search {
-  display: flex;
-  gap: 10px;
+  display: none;
 }
 
-.marketplace-input {
-  flex-grow: 1;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-.marketplace-button {
-  padding: 12px 25px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.marketplace-button:hover {
-  background-color: #45a049;
-}
-
+/* Gambar di pojok kanan */
 .marketplace-image {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end; /* Posisikan gambar ke pojok kanan */
+  align-self: flex-start; /* Pastikan gambar ada di pojok kanan */
 }
 
 .books-stack {
-  max-width: 100%;
+  max-width: 50%; /* Atur ukuran gambar agar proporsional */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk hero section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white; /* Warna pastel lembut */
+    padding: 50px 10%;
+    border-radius: 15px;
+}
+
+/* Styling teks */
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text .subheading {
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.hero-text .underline {
+    text-decoration: underline;
+    text-decoration-color: rgb(243, 239, 239);
+    text-decoration-thickness: 3px;
+}
+
+/* Styling tombol */
+.shop-btn {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; 
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Styling gambar */
+.hero-image img {
+    max-width: 350px; /* Sesuaikan ukuran gambar */
 }
