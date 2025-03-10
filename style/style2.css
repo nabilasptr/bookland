@@ -51,6 +51,31 @@
   color: white;
 }
 
+/* Container Ikon */
+.nav-icons {
+  display: flex;
+  justify-content: center; /* Posisikan ikon secara rata */
+  align-items: center;
+  gap: 40px; /* Beri jarak antar ikon */
+}
+
+/* Gaya Ikon */
+.nav-icons a {
+  text-decoration: none;
+}
+
+.nav-icons i {
+  font-size: 22px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-icons i:hover {
+  color: #333;
+  transform: scale(1.1);
+}
+
 /* Tombol Login & Signup */
 .buttons {
   display: flex;
@@ -87,8 +112,6 @@
   background-color: #666;
   color: white;
 }
-
-/* Existing CSS remains the same */
 
 /* Textbook Marketplace Section */
 .textbook-marketplace {
