@@ -135,44 +135,9 @@ body {
   color: white;
 }
 
-/* Textbook Marketplace Section */
-.textbook-marketplace {
-  background-color: #f9f9f9;
-  padding: 60px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row; /* Supaya teks di kiri, gambar di kanan */
-}
-
-/* Textbook Marketplace Section */
-.textbook-marketplace {
-  background-color: #f9f9f9;
-  padding: 60px 5%;
-  display: flex;
-  align-items: center; /* Pusatkan vertikal */
-  justify-content: space-between; /* Teks kiri, gambar kanan */
-  height: 80vh; /* Buat kontennya berada di tengah halaman */
-}
-
-/* Posisi teks di pojok kiri */
-.marketplace-text {
-  flex: 1;
-  text-align: left;
-  align-self: flex-start; /* Pastikan teks ada di pojok kiri */
-}
-
 /* Hapus pencarian di tengah */
 .marketplace-search {
   display: none;
-}
-
-/* Gambar di pojok kanan */
-.marketplace-image {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end; /* Posisikan gambar ke pojok kanan */
-  align-self: flex-start; /* Pastikan gambar ada di pojok kanan */
 }
 
 .books-stack {
@@ -182,51 +147,124 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling untuk hero section */
-.hero-section {
+/*hero section */
+.hero {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white; /* Warna pastel lembut */
-    padding: 50px 10%;
-    border-radius: 15px;
+    width: 100%;
+    height: 80vh;
+    background-color: white;
+    padding: 50px;
+    overflow: hidden;
 }
 
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 50px 5%;
+  border-radius: 15px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 40%;
+}
+
+.editor-choice {
+    font-size: 14px;
+    color: gray;
+}
+
+.hero-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 /* Styling teks */
 .hero-text {
-    max-width: 50%;
+  max-width: 50%;
 }
 
 .hero-text .subheading {
-    font-size: 14px;
-    color: #888;
-    letter-spacing: 1px;
+  font-size: 14px;
+  color: #888;
+  letter-spacing: 1px;
 }
 
 .hero-text h1 {
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 1.2;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .hero-text .underline {
-    text-decoration: underline;
-    text-decoration-color: rgb(243, 239, 239);
-    text-decoration-thickness: 3px;
+  text-decoration: underline;
+  text-decoration-color: rgb(243, 239, 239);
+  text-decoration-thickness: 3px;
 }
 
 /* Styling tombol */
 .shop-btn {
-    background-color: white;
-    border: none;
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer; 
+    border: none;
+    background-color: black;
+    color: white;
     border-radius: 20px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 /* Styling gambar */
-.hero-image img {
-    max-width: 350px; /* Sesuaikan ukuran gambar */
+.hero-image {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Book Sections */
+.book-section,
+.daily-deals,
+.trending-books {
+  padding: 40px 5%;
+}
+
+.book-list,
+.deal-list,
+.trend-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+}
+
+/* Buku */
+.book-item,
+.deal-item,
+.trend-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-item img,
+.deal-item img,
+.trend-item img {
+  max-width: 150px;
+  border-radius: 10px;
+}
+
+/* Harga */
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
 }
