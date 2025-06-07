@@ -11,14 +11,13 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FavoriteController;
 
+Route::get('/books/new-release', [FrontendController::class, 'newRelease'])->name('books.new_release');
 Route::get('/category-page',[FrontendController::class, 'index'])->name('page.category');
 Route::get('/',[FrontendController::class, 'home'])->name('page.home');
 
 Route::get('/detail', function () {
     return view('details');
 });
-
-
 
 Route::get('/search-books', [FrontendController::class, 'searchBooks'])->name('frontend.searchBooks');
 
