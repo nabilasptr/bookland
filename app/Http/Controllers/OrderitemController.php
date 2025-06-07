@@ -8,10 +8,9 @@ use Illuminate\Http\Request;
 class OrderitemController extends Controller
 {
     public function index()
-{
-    $orderItems = OrderItem::with(['book', 'order.user'])->get();
+    {
+        $orderItems = OrderItem::with(['book', 'order.user'])->get();
 
-    return view('admin.orderitems.index', compact('orderItems'));
-}
-
+        return view('admin.orderitems.index', compact('orderItems'));
+    }
 }

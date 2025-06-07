@@ -8,10 +8,17 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $books = Book::all();
         $categories = Category::all();
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'books' => $books,
+                'categories' => $categories,
+            ]);
+        }
 
         return view('categorypage', compact('books', 'categories'));
     }
@@ -20,13 +27,18 @@ class FrontendController extends Controller
     {
         $categoryId = $request->input('category');
 
-        // Ambil semua kategori (untuk sidebar/menu kategori)
         $categories = Category::all();
 
-        // Filter buku berdasarkan kategori yang dipilih
         $books = Book::when($categoryId, function ($query, $categoryId) {
             return $query->where('category_id', $categoryId);
         })->get();
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'categories' => $categories,
+                'books' => $books,
+            ]);
+        }
 
         return view('categorypage', [
             'categories' => $categories,
@@ -34,23 +46,57 @@ class FrontendController extends Controller
         ]);
     }
 
-    public function home()
+    public function home(Request $request)
     {
         $books = Book::all();
         $categories = Category::all();
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'books' => $books,
+                'categories' => $categories,
+            ]);
+        }
 
         return view('home', compact('books', 'categories'));
     }
 
     public function searchBooks(Request $request)
-{
-    $search = $request->input('search');
-    $categories = Category::all();
+    {
+        $search = $request->input('search');
+        $categories = Category::all();
 
-    $books = Book::when($search, function ($query, $search) {
-        return $query->where('title', 'like', '%' . $search . '%');
-    })->get();
+        $books = Book::when($search, function ($query, $search) {
+            return $query->where('title', 'like', '%' . $search . '%');
+        })->get();
 
-    return view('categorypage', compact('books', 'categories'));
-}
+        if ($request->expectsJson()) {
+            return response()->json([
+                'books' => $books,
+                'categories' => $categories,
+            ]);
+        }
+
+        return view('categorypage', compact('books', 'categories'));
+    }
+
+    public function newRelease(Request $request)
+    {
+        $categories = Category::all();
+        $books = Book::where('status', 'new_release')->latest()->get();
+
+        if ($request->expectsJson()) {
+            return response()->json([
+                'categories' => $categories,
+                'books' => $books,
+                'status' => 'new_release',
+            ]);
+        }
+
+        return view('categorypage', [
+            'categories' => $categories,
+            'books' => $books,
+            'status' => 'new_release'
+        ]);
+    }
 }

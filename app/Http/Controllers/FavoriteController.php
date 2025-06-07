@@ -31,6 +31,4 @@ class FavoriteController extends Controller
 
         return view('favorite.index', compact('books'));
     }
-
-
 }

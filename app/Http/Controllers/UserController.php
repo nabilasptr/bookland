@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index (){
+    public function index()
+    {
         $users = User::all();
-        return view('admin.users.index',compact('users'));
+        return view('admin.users.index', compact('users'));
     }
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $user = User::findOrFail($id);
         $user->delete();
 
@@ -20,15 +22,15 @@ class UserController extends Controller
     }
 
     public function updateRole(Request $request, User $user)
-{
-    $request->validate([
-        'role' => 'required|in:admin,user', // sesuaikan dengan status yang tersedia
-    ]);
+    {
+        $request->validate([
+            'role' => 'required|in:admin,user', // sesuaikan dengan status yang tersedia
+        ]);
 
-    $user->update([
-        'role' => $request->role,
-    ]);
+        $user->update([
+            'role' => $request->role,
+        ]);
 
-    return redirect()->route('users.index')->with('success', 'role berhasil diperbarui.');
-}
+        return redirect()->route('users.index')->with('success', 'role berhasil diperbarui.');
+    }
 }
