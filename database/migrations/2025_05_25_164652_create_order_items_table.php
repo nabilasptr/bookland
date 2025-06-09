@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->foreignId('book_id')->constrained()->onDelete('cascade');
             $table->integer('quantity');
-            $table->decimal('price', 8, 2); // harga saat pembelian
+            $table->decimal('price', 16, 2); // harga saat pembelian
             $table->timestamps();
         });
     }
